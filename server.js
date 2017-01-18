@@ -32,8 +32,9 @@ app.post('/contact', function(req,res){
   res.send("<h1>Hello, " + req.body.name + " Welcome to the club!</h1>")
 });
 
-
-
+app.get('/@:username', function(req,res){
+  res.send('Welcome ' + req.params.username);
+});
 
 //start server
 app.listen(port, function(req,res){
