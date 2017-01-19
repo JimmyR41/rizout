@@ -36,6 +36,10 @@ app.get('/@:username', function(req,res){
   res.send('Welcome ' + req.params.username);
 });
 
+app.use(function(req,res){
+  res.sendFile(__dirname + '/views/pages/404.html');
+})
+
 //start server
 app.listen(port, function(req,res){
   console.log('Listening on 8080');
